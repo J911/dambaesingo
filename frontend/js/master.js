@@ -65,7 +65,7 @@ var icon = new daum.maps.MarkerImage(
   './img/no-smoking.png',
   new daum.maps.Size(35, 35),
   {
-    alt: "마커 이미지 예제",
+    alt: "no smoking!",
   }
 );
 
