@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

@@ -1,0 +1,69 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/master.css">
+    <title>담배신고닷컴</title>
+</head>
+<body>
+<div class="modal" state="hide" onclick="hideModal()">
+    <div class="modal__message" id="message">
+    </div>
+</div>
+<div class="regist" state="hide">
+    <input type="text" placeholder="신고 내용 (선택)" id="contents">
+    <input type="button" value="등록" onclick="registInfo()">
+    <input type="button" onclick="hideRegist()" value="취소">
+</div>
+<div class="location" state="hide">
+    <select onchange="changeLocation(this.value)">
+        <option selected disabled>지역 선택</option>
+        <option value="seoul">서울시</option>
+        <option value="busan">부산시</option>
+        <option value="inchan">인천시</option>
+        <option value="daegu">대구시</option>
+        <option value="daejeon">대전시</option>
+        <option value="gwangju">광주시</option>
+    </select>
+</div>
+<div class="header">
+    <div class="side-menu--btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="header__brand">담배신고닷컴</div>
+</div>
+<ul class="side-menu" state="hide">
+    <li class="side-menu__item" onclick="hideSlideMenu(); showModal('등록 위치를 더블클릭 해주세요')">신고하기</li>
+    <li class="side-menu__item" onclick="hideSlideMenu(); showModal('준비중입니다.')">신고내역 조회</li>
+    <li class="side-menu__item" onclick="hideSlideMenu(); setCurrentPos()">내 위치로 가기</li>
+    <li class="side-menu__item" onclick="hideSlideMenu(); showChangeLoc()">지역 바꾸기</li>
+</ul>
+<div class="body">
+    <div class="body__map" id="map"></div>
+</div>
+<div class="footer">
+    <ul class="footer__menu">
+        <li class="footer__menu__item" onclick="setCurrentPos()">
+            <i class="fas fa-location-arrow"></i>
+            내위치
+        </li>
+        <li class="footer__menu__item" onclick="showModal('등록 위치를 더블클릭 해주세요')">
+            <i class="fas fa-file-signature"></i>
+            신고하기
+        </li>
+        <li class="footer__menu__item" onclick="showChangeLoc()">
+            <i class="fas fa-map-marker-alt"></i>
+            지역 변경
+        </li>
+    </ul>
+</div>
+<div class="dimmer"></div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d437baa1eb74f7eac7bca7ec8d7775a9&libraries=services"></script>
+<script src="./js/master.js"></script>
+</body>
+</html>
