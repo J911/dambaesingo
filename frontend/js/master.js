@@ -163,7 +163,6 @@ function updatePin() {
       info.forEach(i => {
         setMarker(i.lat, i.lng, icon);
       });
-      console.log(response.data.info);
     })
     .catch(function (error) {
       console.log(error);
