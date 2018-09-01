@@ -137,8 +137,8 @@ function changeLocation(loc) {
   var latlng = locations[loc];
   var moveLatLng = new daum.maps.LatLng(latlng.lat, latlng.lng);
   map.panTo(moveLatLng);
-  map.setLevel(8);
-  
+  map.setLevel(5);
+  updateRegion();
   hideChangeLoc();
 }
 
